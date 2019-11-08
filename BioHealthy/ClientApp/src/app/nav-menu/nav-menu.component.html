@@ -1,13 +1,10 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">BioHealthy</a>
-  <form class="form-inline">
-    <ul class='nav navbar-nav'>
-      <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-        <a [routerLink]='["/"]' (click)='collapse()'>
-          <span class='glyphicon glyphicon-home'></span> Home
-        </a>
-      </li>
 
-    </ul>
-</form>
-</nav>
+<nav class="navbar navbar-dark bg-primary">
+    <a  class="navbar-brand" href="/"></a>
+    <h3>BioHealthy</h3>
+    <button type="button" class="btn btn-primary btn-lg"[routerLink]='["/"]' (click)='collapse()'>HOME</button>
+    
+    </nav>
+    
+
+

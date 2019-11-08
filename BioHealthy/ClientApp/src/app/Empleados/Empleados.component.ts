@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./empleados.component.css']
 })
 export class EmpleadosComponent {
-  
+  id:number;
+  nombre:string;
+  cargo:string;
 }

@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BioHealthy",
+<<<<<<< HEAD,
+    "\\biometrico_git",
+=======
+    "\\BioHealthy\\ClientApp";
+>>>>>>> 2879557c068dacdf40c6d8dc88cf539eee4d0e24
+  ],
+  "SelectedNode": "\\BioHealthy.sln",
+  "PreviewInSolutionExplorer": false
+}

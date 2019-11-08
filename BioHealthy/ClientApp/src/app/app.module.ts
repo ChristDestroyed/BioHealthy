@@ -31,6 +31,7 @@ import { VisitantesComponent } from './Visitantes/visitantes.component'
       { path: 'visitantes', component: VisitantesComponent }
       
       
+      
     ])
   ],
   providers: [],
