@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { EmpleadosComponent} from'./empleados/empleados.component'
+import { EmpleadosComponent} from './empleados/empleados.component';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { VisitantesComponent } from './Visitantes/visitantes.component'
-
+import { VisitantesComponent } from './Visitantes/visitantes.component';
+import { RegistroComponent } from './Registro/registro.component';
+import { LoginComponent } from './Login/Login.component';
 
 @NgModule({
   declarations: [
@@ -16,10 +17,12 @@ import { VisitantesComponent } from './Visitantes/visitantes.component'
     NavMenuComponent,
     HomeComponent,
     EmpleadosComponent,
-    VisitantesComponent
+    VisitantesComponent,
+    RegistroComponent,
+    LoginComponent,
 
-    
-    
+
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,10 +31,11 @@ import { VisitantesComponent } from './Visitantes/visitantes.component'
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'empleados', component: EmpleadosComponent },
-      { path: 'visitantes', component: VisitantesComponent }
-      
-      
-      
+      { path: 'visitantes', component: VisitantesComponent },
+      { path: 'registro', component: RegistroComponent },
+      { path: 'login', component: LoginComponent },
+
+
     ])
   ],
   providers: [],
