@@ -1,3 +1,4 @@
-﻿body
-{
+textarea{
+  width:100px;
+  max-height:500px;
 }
