@@ -1,38 +1,49 @@
 <div>
   <form>
-    <label>Tipo de documento:</label>
-    <select name="Tipo_Documento">
-      <option value="1">Cedula de ciudania</option>
-      <option value="2">Tarjeta de identidad</option>
-      <option value="3">Cedula de extranjeria</option>
-    </select>
-    <input type="number" placeholder="Numero de documento" />
-    <input type="text" placeholder="Nombres" />
-    <input type="text" placeholder="Apellidos" />
-    <input type="date" placeholder="Fecha de nacimiento" />
-    <input type="radio" name="gender" value="Hombre"> Hombre
-    <input type="radio" name="gender" value="Mujer"> Mujer
-    <input type="radio" name="gender" value="Otro"> Otro
-    <input type="number" placeholder="Telefono celular" />
-    <div>
-      <select name="Id_Ubicacion">
-        <option>Calle</option>
-        <option>Carrera</option>
-      </select>
-      <input type="number" />
-      <input type="text" />
-      #
-      <input type="number" />
-      <input type="text" />
-      <input type="number" />
-      <input type="text" />
+    <div class="form-row">
+      <div class="form-group">
+        <label for="Tipo_documento">Tipo de documento:</label>
+        <select id="Tipo_documento">
+          <option selected>Seleccionar</option>
+          <option value="1">Cedula de ciudania</option>
+          <option value="2">Tarjeta de identidad</option>
+          <option value="3">Cedula de extranjeria</option>
+        </select>
+      </div>
+        <div class="form-group">
+          <input type="number" placeholder="Numero de documento" />
+        </div>
     </div>
-    <select name="Id_Cargo">
-      <option selected>Visitante</option>
-    </select>
-    <input type="datetime" placeholder="Hora de ingreso" />
-    <input type="datetime" placeholder="Hora de salida" />
-    <textarea placeholder="Justificacion"></textarea><br />
-    <button type="submit">Registrar</button>
+    <div class="form-row">
+      <div class="form-group">
+        <input type="text" placeholder="Apellidos" />
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Nombres" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <input type="text" placeholder="Empresa" />
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Cargo" />
+      </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" id="Personal" value="option1" />
+          <label class="form-check-label" for="Personal">
+            Personal
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input type="radio" class="form-check-input" id="Comercial" value="option1" />
+          <label class="form-check-label" for="Comercial">
+            Comercial
+          </label>
+        </div>
+      </div>
+      <button type="submit">Registrar</button>
   </form>
 </div>
