@@ -1,5 +1,5 @@
 .principal {
-  display: inline-flex;
+  display:inline-flex;
   margin-top: 100px;
   width: 300px;
   height: 200px;
@@ -9,23 +9,15 @@
   margin-left:100px;
 }
 
-.card-2,.card-3{
+.card-2{
   margin-left:20px;
 }
 
-.title {
-  text-align:center;
-  margin-top: 2%;
-  font-weight:bolder;
+.badge{
+  background-color:blue;
+  height: 15px;
 }
 
-.text{
-  text-align:center;
-  margin-bottom:10%;
-}
-
-.btn{
-  margin-bottom:80%;
-  margin-left:50%;
-  transform:translate(-50%);
+.tooltip .tooltiptext{
+  background-color:red;
 }
