@@ -6,7 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./empleados.component.css']
 })
 export class EmpleadosComponent {
-  id:number;
-  nombre:string;
-  cargo:string;
+
+employees =[
+  {nombre:'ALVAREZ GONZALEZ BEATRIZ ELENA',cargo:'OPERARIA DE PRODUCCION Y ACONDICIONAMIENTO',documento:'43.727.714' },
+
+] 
+
+
+   constructor(){
+
+   }
+
 }
