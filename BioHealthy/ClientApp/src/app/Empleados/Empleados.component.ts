@@ -6,30 +6,60 @@ import { Component } from '@angular/core';
   styleUrls: ['./empleados.component.css']
 })
 export class EmpleadosComponent {
+  msg: string;
+  documento: string;
+  nombre: string;
+  apellido: string;
+  cargo: string;
 
   employees = [
-    { nombre: 'ALVAREZ GONZALEZ BEATRIZ ELENA', cargo: 'OPERARIA DE PRODUCCION Y ACONDICIONAMIENTO', documento: '43.727.714' },
+    {documento:'123',nombre:"sebastian",apellido:"castro",cargo:"desarrollo"},
 
   ];
 
   model: any = {};
+  model2: any = {};
+  hideUpdate: boolean = true;
 
   addEmployee(): void {
-
+    this.employees.push(this.model);
+    this.model = {};
+    this.msg='El Registro Fue Exitoso'
   }
-  deleteEmployee(): void {
+  deleteEmployee(i): void {
+    var answer = confirm('Esta Seguro de Querer Eliminarlo')
+    if (answer) {
+      this.employees.splice(i, 1);
+    }
   }
 
-  editEmployee(): void {
-
+  myValue;
+  editEmployee(i): void {
+    this.hideUpdate = false;
+    this.model2.documento = this.employees[i].documento;
+    this.model2.nombre = this.employees[i].nombre;
+    this.model2.apellido = this.employees[i].apellido;
+    this.model2.cargo = this.employees[i].cargo;
+    this.myValue = i;
   }
 
   updateEmployee(): void {
+    let i = this.myValue;
+    for (let j = 0; j < this.employees.length; j++) {
+      if (j == i) {
+        this.employees[i] = this.model2;
+        this.model2 = {};
+        this.msg='El Registro se Actualizo Existosamente'
+      }
 
+    }
+    this.hideUpdate = true;
   }
 
-   constructor(){
+  closeAlert() {
+    this.msg = '';
+  }
 
    }
 
-}
+
