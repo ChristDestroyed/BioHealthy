@@ -7,11 +7,26 @@ import { Component } from '@angular/core';
 })
 export class EmpleadosComponent {
 
-employees =[
-  {nombre:'ALVAREZ GONZALEZ BEATRIZ ELENA',cargo:'OPERARIA DE PRODUCCION Y ACONDICIONAMIENTO',documento:'43.727.714' },
+  employees = [
+    { nombre: 'ALVAREZ GONZALEZ BEATRIZ ELENA', cargo: 'OPERARIA DE PRODUCCION Y ACONDICIONAMIENTO', documento: '43.727.714' },
 
-] 
+  ];
 
+  model: any = {};
+
+  addEmployee(): void {
+
+  }
+  deleteEmployee(): void {
+  }
+
+  editEmployee(): void {
+
+  }
+
+  updateEmployee(): void {
+
+  }
 
    constructor(){
 
