@@ -1,14 +1,6 @@
 <div class="principal card-1">
-  <div class="title">Empleados</div>
-  <div class="body">
-    <p class="text">Ingreso de personal</p>
-    <a [routerLink]='["/empleados"]' (click)='collapse()' class="btn btn-primary">Ingresar </a>
-  </div>
+  <a [routerLink]='["/empleados"]' (click)='collapse()' class="badge" data-toggle="tooltip" data-placement="bottom" title="Ingreso de empleados">Empleados </a>
 </div>
 <div class="principal card-2">
-  <div class="title">Visitante</div>
-  <div class="body">
-    <p class="text">Registro  de visitantes</p>
-    <a [routerLink]='["/visitantes"]' (click)='collapse()' class="btn btn-primary">Ingresar </a>
-  </div>
+  <a [routerLink]='["/visitantes"]' (click)='collapse()' class="badge" data-toggle="tooltip" data-placement="bottom" title="Registro de visitantes">Visitantes </a>
 </div>
