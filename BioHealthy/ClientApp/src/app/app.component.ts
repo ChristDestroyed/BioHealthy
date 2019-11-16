@@ -7,5 +7,6 @@ import{EmpleadosComponent} from'./Empleados/Empleados.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  empleadosArray:EmpleadosComponent[] =[];
-}
+
+  }
+
