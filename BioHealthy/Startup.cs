@@ -1,10 +1,13 @@
+using BioHealthy.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
 
 namespace BioHealthy
 {
@@ -17,9 +20,17 @@ namespace BioHealthy
 
         public IConfiguration Configuration { get; }
 
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
+
+
+
+
         {
+           
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // In production, the Angular files will be served from this directory
@@ -27,6 +38,12 @@ namespace BioHealthy
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            var connection = @"server=.\SQLSERVER2017;DataBase=DB_RegistroB20191115.sql;Trusted_Connection=True;ConnectRetryCount=0";
+            services.AddDbContext<AplicationsDbContext>(option => option.UseSqlServer(connection));
+
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
