@@ -16,8 +16,5 @@
 .badge{
   background-color:blue;
   height: 15px;
-}
-
-.tooltip .tooltiptext{
-  background-color:red;
+  color:white;
 }

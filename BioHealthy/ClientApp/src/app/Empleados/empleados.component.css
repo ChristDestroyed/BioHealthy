@@ -1,1 +1,18 @@
-﻿
+.row{
+  max-width:50%;
+  max-height:100%;
+}
+
+h2{
+  font-size:18px;
+  font-weight:bold;
+}
+
+.row-1{
+  margin-left:-15%;
+}
+
+.row-2{
+  margin-left:50%;
+  margin-top:-38.2%;
+}
