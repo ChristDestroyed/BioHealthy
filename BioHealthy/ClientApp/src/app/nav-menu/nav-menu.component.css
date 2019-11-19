@@ -1,11 +1,11 @@
 nav {
-  margin-top: 0 !important;
+  margin-top: 0;
+  background-color: #4189C7;
+  color: white;
 }
 
-/* Highlighting rules for nav menu items */
-nav {
-    background-color: #4189C7;
-    color: white;
+.navbar-header{
+  width:300px;
 }
 
 #main-logo{
@@ -15,6 +15,11 @@ nav {
 a{
   color:blue;
 }
+
 a:hover{
   color:purple;
+}
+
+.spacing-2{
+  margin-left:15%;
 }
