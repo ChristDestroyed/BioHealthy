@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-empleados',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./empleados.component.css']
 })
 export class EmpleadosComponent {
+    lstEmpleados: Empleados[];
+
   msg: string;
   documento: string;
   nombre: string;
@@ -13,9 +16,11 @@ export class EmpleadosComponent {
   cargo: string;
 
   employees = [
-    {documento:'123',nombre:"sebastian",apellido:"castro",cargo:"desarrollo"},
+    { documento: '123', nombre: "sebastian", apellido: "castro", cargo: "desarrollo" },
 
   ];
+
+
 
   model: any = {};
   model2: any = {};
@@ -59,7 +64,18 @@ export class EmpleadosComponent {
   closeAlert() {
     this.msg = '';
   }
+  constructor(http: HttpClient, @Inject("BASE_URL") baseUrl: string) {
+    http.get<Empleados[]>(baseUrl + "api/Empleados/Empleados").subscribe(result => {
+      this.lstEmpleados = result;
+    }, error => console.error(error))
 
-   }
-
+  }
+ }
+interface Empleados {
+  Id: number,
+  Documento: number,
+  Nombre: string,
+  Apellido: string,
+  Cargo: string,
+}
 

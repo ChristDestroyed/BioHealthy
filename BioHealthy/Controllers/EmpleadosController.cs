@@ -2,43 +2,38 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BioHealthy.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BioHealthy.Controllers
 {
     [Route("api/[controller]")]
-    public class SampleDataController : Controller
+    public class EmpleadosController : Controller
     {
-        private static string[] Summaries = new[]
+        private Models.MyDBcontext db;
+        public EmpleadosController(Models.MyDBcontext context)
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+            db = context;
+        }
+
 
         [HttpGet("[action]")]
-        public IEnumerable<WeatherForecast> WeatherForecasts()
+        public IEnumerable<ViewEmpleados>Empleados()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                DateFormatted = DateTime.Now.AddDays(index).ToString("d"),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            });
-        }
+            List<ViewEmpleados> lst = (from d in db.Empleados
+                                       select new ViewEmpleados
+                                       {
+                                           Id = d.Id,
+                                           Documento = d.Documento,
+                                           Nombre = d.Nombres,
+                                           Apellido = d.Apellidos,
+                                           Cargo = d.Cargo,
+                                       }).ToList();
 
-        public class WeatherForecast
-        {
-            public string DateFormatted { get; set; }
-            public int TemperatureC { get; set; }
-            public string Summary { get; set; }
 
-            public int TemperatureF
-            {
-                get
-                {
-                    return 32 + (int)(TemperatureC / 0.5556);
-                }
-            }
+            return lst;
+
         }
+       
     }
 }
