@@ -39,7 +39,7 @@ namespace BioHealthy
                 configuration.RootPath = "ClientApp/dist";
             });
 
-            var connection = @"server=.\SQLSERVER2017;DataBase=DB_RegistroB2019111;Trusted_Connection=True;ConnectRetryCount=0";
+            var connection = @"server=.\SQLSERVER2017;DataBase=BioHealthy;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<AplicationsDbContext>(option => option.UseSqlServer(connection));
 
 
