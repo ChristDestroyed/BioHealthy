@@ -16,3 +16,7 @@ h2 {
   margin-left: 50%;
   margin-top: -38.2%;
 }
+
+.align {
+  display: inline-flex;
+}
