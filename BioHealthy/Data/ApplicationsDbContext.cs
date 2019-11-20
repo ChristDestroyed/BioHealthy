@@ -22,5 +22,6 @@ namespace BioHealthy.Data
         public string nombre { get; set; }
         public string apellidos { get; set; }
         public string cargo { get; set; }
+        public string ciudad{get; set;}
     }
 }

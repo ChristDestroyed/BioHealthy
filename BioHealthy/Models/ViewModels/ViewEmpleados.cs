@@ -13,5 +13,7 @@ namespace BioHealthy.Models.ViewModels
         public string Apellido { get; set; }
         public string Cargo { get; set; }
 
+        public string Ciudad {get; set;}
+
     }
 }

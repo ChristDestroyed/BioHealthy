@@ -11,9 +11,10 @@ export class VisitantesComponent {
   nombre: string;
   apellido: string;
   cargo: string;
+  ciudad:string;
 
   visitantes = [
-    {documento:'123',nombre:"sebastian",apellido:"castro",cargo:"desarrollo"},
+    {documento:'123',nombre:"sebastian",apellido:"castro",cargo:"desarrollo",ciudad:"medellin"},
 
   ];
 
@@ -40,6 +41,7 @@ export class VisitantesComponent {
     this.model2.nombre = this.visitantes[i].nombre;
     this.model2.apellido = this.visitantes[i].apellido;
     this.model2.cargo = this.visitantes[i].cargo;
+    this.model2.ciudad = this.visitantes[i].ciudad;
     this.myValue = i;
   }
 
