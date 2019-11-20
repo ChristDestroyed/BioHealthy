@@ -14,9 +14,10 @@ export class EmpleadosComponent {
   nombre: string;
   apellido: string;
   cargo: string;
+  ciudad:string;
 
   employees = [
-    { documento: '123', nombre: "sebastian", apellido: "castro", cargo: "desarrollo" },
+    { documento: '123', nombre: "sebastian", apellido: "castro", cargo: "desarrollo",ciudad:"medellin" },
 
   ];
 
@@ -45,6 +46,7 @@ export class EmpleadosComponent {
     this.model2.nombre = this.employees[i].nombre;
     this.model2.apellido = this.employees[i].apellido;
     this.model2.cargo = this.employees[i].cargo;
+    this.model2.ciudad=this.employees[i].ciudad;
     this.myValue = i;
   }
 

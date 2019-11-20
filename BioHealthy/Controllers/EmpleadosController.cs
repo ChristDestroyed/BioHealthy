@@ -28,6 +28,7 @@ namespace BioHealthy.Controllers
                                            Nombre = d.Nombres,
                                            Apellido = d.Apellidos,
                                            Cargo = d.Cargo,
+                                           Ciudad =d.Ciudad,
                                        }).ToList();
 
 

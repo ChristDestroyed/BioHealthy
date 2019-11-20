@@ -18,7 +18,7 @@ namespace BioHealthy.Models
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Cargo { get; set; }
-        public int Cod_Ciudad { get; set; }
+        public string Ciudad { get; set; }
 
 
 
@@ -30,6 +30,7 @@ namespace BioHealthy.Models
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Cargo { get; set; }
+        public string Ciudad{ get; set;}
 
 
     }
