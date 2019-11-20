@@ -3,9 +3,8 @@ nav {
   background-color: #4189C7;
   color: white;
 }
-
 .navbar-header{
-  width:300px;
+  float:none;
 }
 
 #main-logo{
@@ -20,6 +19,17 @@ a:hover{
   color:purple;
 }
 
+.spacing-1 {
+  margin-left: 2%;
+}
+
 .spacing-2{
   margin-left:15%;
+}
+
+@media (min-width:767px){
+  #main-logo{
+    margin-left:90%;
+    margin-top:-2%;
+  }
 }
