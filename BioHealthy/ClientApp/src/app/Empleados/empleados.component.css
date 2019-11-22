@@ -8,15 +8,24 @@ h2{
   font-weight:bold;
 }
 
-.row-1{
-  margin-left:-15%;
-}
 
 .row-2{
-  margin-left:45%;
-  margin-top:-38.2%;
+  margin-left:50%;
+  margin-top:-50%;
 }
 
 .align{
   display:inline-flex;
+}
+
+@media (min-width:0){
+  .row-1{
+    margin-left:0;
+  }
+}
+@media (max-width:1110px){
+  .row-2 {
+    margin-left: 0;
+    margin-top: 0;
+  }
 }
