@@ -1,4 +1,6 @@
-<form>
+
+
+<form class="form-signin" #registroForm="ngForm" (ngSubmit)="registro">
   <div class="form-row">
     <div class="form-group">
       <label for="Apellidos">
@@ -26,3 +28,4 @@
     <input type="text" class="form-control" id="Cargo" placeholder="Cargo" />
   </div>
 </form>
+

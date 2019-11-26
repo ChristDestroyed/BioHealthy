@@ -8,9 +8,10 @@
     <div class="checkbox">
       <label>
         <input type="checkbox" value="remember-me"> Recuerdame
+
       </label>
+      <a class="spacing-2" [routerLink]='["/registro"]' (click)='collapse()'>Registrese aqui</a>
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" >Ingresar</button>
-     <a [routerLink]="['/registro']" class="btn btn-link">Registro</a>
-  </form>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" >Ingresar</button>
+</form>
 </div>
