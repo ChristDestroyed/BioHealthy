@@ -1,31 +1,20 @@
 .principal {
-  display: inline-flex;
+  display:inline-flex;
   margin-top: 100px;
-  width: 300px;
-  height: 200px;
+  width: 100px;
+  height: 40px;
 }
 
 .card-1{
   margin-left:100px;
 }
 
-.card-2,.card-3{
-  margin-left:20px;
+.card-2{
+  margin-left:200px;
 }
 
-.title {
-  text-align:center;
-  margin-top: 2%;
-  font-weight:bolder;
-}
-
-.text{
-  text-align:center;
-  margin-bottom:10%;
-}
-
-.btn{
-  margin-bottom:80%;
-  margin-left:50%;
-  transform:translate(-50%);
+.btn {
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10rem;
 }

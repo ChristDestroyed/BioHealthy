@@ -1,1 +1,31 @@
-﻿
+.row{
+  max-width:50%;
+  max-height:100%;
+}
+
+h2{
+  font-size:18px;
+  font-weight:bold;
+}
+
+
+.row-2{
+  margin-left:50%;
+  margin-top:-50%;
+}
+
+.align{
+  display:inline-flex;
+}
+
+@media (min-width:0){
+  .row-1{
+    margin-left:0;
+  }
+}
+@media (max-width:1110px){
+  .row-2 {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}

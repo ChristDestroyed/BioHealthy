@@ -1,49 +1,163 @@
-<div>
-  <form>
-    <div class="form-row">
-      <div class="form-group">
-        <label for="Tipo_documento">Tipo de documento:</label>
-        <select id="Tipo_documento">
-          <option selected>Seleccionar</option>
-          <option value="1">Cedula de ciudania</option>
-          <option value="2">Tarjeta de identidad</option>
-          <option value="3">Cedula de extranjeria</option>
-        </select>
+<div class="container app">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="alert alert-success alert-dismissable" *ngIf="msg">
+        <a href="#" class="close" (click)="closeAlert()">
+          &times;
+        </a>
+        {{msg}}
       </div>
+    </div>
+  </div>
+  <div class="row row-1">
+    <div class="col-sm-12">
+      <h2>Registro de Visitantes:</h2>
+      <form class="form-horizontal">
         <div class="form-group">
-          <input type="number" placeholder="Numero de documento" />
-        </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <input type="text" placeholder="Apellidos" />
-      </div>
-      <div class="form-group">
-        <input type="text" placeholder="Nombres" />
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <input type="text" placeholder="Empresa" />
-      </div>
-      <div class="form-group">
-        <input type="text" placeholder="Cargo" />
-      </div>
-      </div>
-      <div class="form-group">
-        <div class="form-check form-check-inline">
-          <input type="radio" class="form-check-input" id="Personal" value="option1" />
-          <label class="form-check-label" for="Personal">
-            Personal
+          <label for="documento" class="control-label col-sm-2">
+            Documento
           </label>
+            <input type="text" class="form-control" id="documento"
+                   name="documento" [(ngModel)]="model.documento"
+                   placeholder=" Documento ">
         </div>
-        <div class="form-check form-check-inline">
-          <input type="radio" class="form-check-input" id="Comercial" value="option1" />
-          <label class="form-check-label" for="Comercial">
-            Comercial
+        <div class="form-group">
+          <label for="Nombre" class="control-label col-sm-2">
+            Nombre
           </label>
+            <input type="text" class="form-control" id="nombre"
+                   name="nombre" [(ngModel)]="model.nombre"
+                   placeholder=" Nombre">
         </div>
-      </div>
-      <button type="submit">Registrar</button>
-  </form>
+        <div class="form-group">
+          <label for="apellido" class="control-label col-sm-2">
+            Apellido
+          </label>
+            <input type="text" class="form-control" id="apellido"
+                   name="apellido" [(ngModel)]="model.apellido"
+                   placeholder="Apellido">
+        </div>
+        <div class="form-group">
+          <label for="cargo" class="control-label col-sm-2">
+            Cargo
+          </label>
+            <input type="text" class="form-control" id="cargo"
+                   name="cargo" [(ngModel)]="model.cargo"
+                   placeholder="Cargo">
+        </div>
+        <div class="form-group">
+          <label for="ciudad" class="control-label col-sm-2">
+            Ciudad
+          </label>
+            <input type="text" class="form-control" id="ciudad"
+                   name="ciudad" [(ngModel)]="model.ciudad"
+                   placeholder="Ciudad">
+        </div>
+        <div class="form-group">
+          <div class="col-sm-8 col-sm-offset-2">
+            <button type="submit" class="btn btn-primary" (click)="addVisitantes()">
+              Guardar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row row-2">
+    <div class="col-sm-8">
+      <h2>Lista De Visitantes: </h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Documento</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Cargo</th>
+            <th>Ciudad</th>
+            <th>Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let visitantes of visitantes; let i = index">
+            <td>{{visitantes.documento}}</td>
+            <td>{{visitantes.nombre}}</td>
+            <td>{{visitantes.apellido}}</td>
+            <td>{{visitantes.cargo}}</td>
+            <td>{{visitantes.ciudad}}</td>
+            <td class="align">
+              <a (click)="editVisitantes(i)" class="btn btn-primary">
+                Editar
+              </a>
+              <a (click)="deleteVisitantes(i)" class="btn btn-primary">
+                Borrar
+              </a>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-4" [hidden]="hideUpdate">
+      <h2>Actualizar Datos:</h2>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="name" class="control-label col-sm-2">
+            Documento
+          </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="documento"
+                   name="documento" [(ngModel)]="model2.documento"
+                   placeholder="Documento">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="nombre" class="control-label col-sm-2">
+            Nombre
+          </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="nombre"
+                   name="nombre" [(ngModel)]="model2.nombre"
+                   placeholder="Nombre">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cargo" class="control-label col-sm-2">
+            Apellido
+          </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="apellido"
+                   name="apellido" [(ngModel)]="model2.apellido"
+                   placeholder="Apellido">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="documento" class="control-label col-sm-2">
+           Cargo
+          </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="cargo"
+                   name="Cargo" [(ngModel)]="model2.cargo"
+                   placeholder="Cargo">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="ciudad" class="control-label col-sm-2">
+           Ciudad
+          </label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="ciudad"
+                   name="Ciudad" [(ngModel)]="model2.ciudad"
+                   placeholder="Ciudad">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-10 col-sm-offset-2">
+            <button type="submit" class="btn btn-primary" (click)="updateEmployee()">
+              Guardar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

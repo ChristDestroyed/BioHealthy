@@ -1,10 +1,8 @@
 
-<nav class="navbar navbar-inverse navbar-fixed-top w-100" >
-  <div class="container">
-    <div class="navbar-header">          
-      <a [routerLink]='["/"]' (click)='collapse()'>Home</a>
-      <a [routerLink]='["/login"]' (click)='collapse()'>Login</a>
-    </div>
-    <img id ="main-logo" src ="assets/imagenes/logo.png" alt="">
+<nav class="navbar" >
+  <div class="navbar-header">
+    <a class="spacing-1" [routerLink]='["/"]' (click)='collapse()'>Home</a>
+    <a class="spacing-2" [routerLink]='["/login"]' (click)='collapse()'>Login</a>
   </div>
+  <img id="main-logo" src="assets/imagenes/logo.png" alt="">
 </nav>

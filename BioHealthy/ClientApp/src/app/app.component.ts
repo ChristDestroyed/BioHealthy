@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import{EmpleadosComponent} from'./Empleados/Empleados.component';
+import {EmpleadosComponent} from './Empleados/Empleados.component';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,6 @@ import{EmpleadosComponent} from'./Empleados/Empleados.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  empleadosArray:EmpleadosComponent[] =[];
-}
+
+  }
+
