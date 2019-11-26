@@ -4,12 +4,16 @@ namespace BioHealthy.Models
 {
     public class MyDBcontext : DbContext
     {
+        private static DbContextOptions options;
+
         public MyDBcontext(DbContextOptions<MyDBcontext> options) : base(options)
         {
 
         }
         public DbSet<Empleados> Empleados { get; set; }
         public DbSet<Visitantes> Visitantes { get; set; }
+
+       
     }
     public class Empleados
     {
