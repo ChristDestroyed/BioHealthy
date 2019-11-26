@@ -2,7 +2,7 @@
   <form class="form-signin" #loginForm="ngForm" (ngSubmit)="login">
     <h2 class="form-signin-heading">Iniciar sesion</h2>
     <label for="nombre" class="sr-only">Nombre</label>
-    <input type="password" id="nombre" class="form-control" placeholder="nombre"  required>
+    <input type="password" id="nombre" class="form-control" placeholder="nombre" required>
     <label for="inputDocumento" class="sr-only">Password</label>
     <input type="password" id="inputPassword" class="form-control" placeholder="Documento" required>
     <div class="checkbox">
@@ -12,6 +12,6 @@
       </label>
       <a class="spacing-2" [routerLink]='["/registro"]' (click)='collapse()'>Registrese aqui</a>
     </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit" >Ingresar</button>
-</form>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+  </form>
 </div>
