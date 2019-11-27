@@ -17,7 +17,8 @@ export class EmpleadosComponent {
   ciudad:string;
 
   employees = [
-    { documento: '123', nombre: "sebastian", apellido: "castro", cargo: "desarrollo",ciudad:"medellin" },
+    {documento: '' , nombre: '' , apellido: '', cargo: '', ciudad: ''},
+
 
   ];
 

@@ -11,10 +11,10 @@ export class VisitantesComponent {
   nombre: string;
   apellido: string;
   cargo: string;
-  ciudad:string;
+  ciudad: string;
 
   visitantes = [
-    {documento:'123',nombre:"sebastian",apellido:"castro",cargo:"desarrollo",ciudad:"medellin"},
+    {documento: '' , nombre: '' , apellido: '', cargo: '', ciudad: ''},
 
   ];
 
@@ -51,7 +51,7 @@ export class VisitantesComponent {
       if (j == i) {
         this.visitantes[i] = this.model2;
         this.model2 = {};
-        this.msg='El Registro se Actualizo Existosamente'
+        this.msg = 'El Registro se Actualizo Existosamente'
       }
 
     }
