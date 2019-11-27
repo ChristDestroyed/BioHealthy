@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
 })
 export class  RegistroComponent {
 
+  id: number;
+  nombre: string;
+  docmento: any;
+
+
+
+  
 
 }
