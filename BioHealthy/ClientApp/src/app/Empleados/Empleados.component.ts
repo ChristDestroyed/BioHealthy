@@ -7,7 +7,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./empleados.component.css']
 })
 export class EmpleadosComponent {
-    lstEmpleados: Empleados[];
+    public lstEmpleados: Empleados[ ];
+
+    
 
   msg: string;
   documento: string;
@@ -22,7 +24,7 @@ export class EmpleadosComponent {
 
   ];
 
-
+    
 
   model: any = {};
   model2: any = {};
