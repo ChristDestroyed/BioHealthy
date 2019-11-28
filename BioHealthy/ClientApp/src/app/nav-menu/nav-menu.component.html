@@ -1,7 +1,24 @@
+<<<<<<< HEAD
 <nav class="navbar" >
   <div class="navbar-header">
     <a routerLink = "active" [routerLink]='["/"]' (click)='collapse()'>Home</a>
     <a routerLink ="active" [routerLink]='["/login"]' (click)='collapse()'>Login</a>
   </div>
   <img id="main-logo" src="assets/imagenes/logo.png" alt="">
+=======
+
+<nav class="navbar navbar-dark bg-primary">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="spacing-1" [routerLink]='["/"]' (click)='collapse()'>Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="spacing-2" [routerLink]='["/login"]' (click)='collapse()'>Login</a>
+    </li>
+    <li class="nav-item">
+      <a class="spacing-2" [routerLink]='["/registro"]' (click)='collapse()'>Registro</a>
+    </li>
+    </ul>
+   <img id ="main-logo" src ="assets/imagenes/logo.png" alt="">
+>>>>>>> b465c2cc60cf54681638632d23e8591db85c92d2
 </nav>
