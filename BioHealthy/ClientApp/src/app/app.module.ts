@@ -21,13 +21,14 @@ const appRoutes: Routes = [
 ];
 @NgModule({
   declarations: [
+    LoginComponent,
     AppComponent,
     NavMenuComponent,
     HomeComponent,
     EmpleadosComponent,
     VisitantesComponent,
     RegistroComponent,
-    LoginComponent,
+
 
 
 
