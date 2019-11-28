@@ -1,21 +1,20 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace BioHealthy.Models
 {
-    public class MyDBcontext : DbContext
+    public class MyDBContext : DbContext
     {
-        private static DbContextOptions options;
-
-        public MyDBcontext(DbContextOptions<MyDBcontext> options) : base(options)
+        public MyDBContext(DbContextOptions<MyDBContext> options) : base(options)
         {
 
         }
-        public DbSet<Empleados> Empleados { get; set; }
-        public DbSet<Visitantes> Visitantes { get; set; }
-
-       
+        public DbSet<Message> Message { get; set; }
     }
-    public class Empleados
+    public class Message
     {
         public int Id { get; set; }
         public int Documento { get; set; }
@@ -23,19 +22,5 @@ namespace BioHealthy.Models
         public string Apellidos { get; set; }
         public string Cargo { get; set; }
         public string Ciudad { get; set; }
-
-
-
-    }
-    public class Visitantes
-    {
-        public int Id { get; set; }
-        public int Documento { get; set; }
-        public string Nombres { get; set; }
-        public string Apellidos { get; set; }
-        public string Cargo { get; set; }
-        public string Ciudad{ get; set;}
-
-
     }
 }
