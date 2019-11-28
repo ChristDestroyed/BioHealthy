@@ -42,3 +42,12 @@ BioHealthy/Startup.cs
 .vs/BioHealthy/v16/.suo
 .vs/BioHealthy/v16/Server/sqlite3/storage.ide
 >>>>>>> 9346fa315bacf3d17d70754a626f0f33bf11dc38
+.vs/BioHealthy/DesignTimeBuild/.dtbcache
+.vs/BioHealthy/v15/.suo
+.vs/BioHealthy/v15/Server/sqlite3/storage.ide-shm
+.vs/BioHealthy/v15/Server/sqlite3/storage.ide-wal
+BioHealthy/Models/MyDBcontext.cs
+BioHealthy/BioHealthy.csproj
+BioHealthy/component/package-lock.json
+BioHealthy/BioHealthy.csproj
+BioHealthy/ClientApp/src/app/Registro/registro.component.html

@@ -1,8 +1,8 @@
-<<<<<<< HEAD
+
 using BioHealthy.Data;
-=======
+
 using BioHealthy.Models;
->>>>>>> conexiondatabase
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
+
 
 
 namespace BioHealthy
@@ -36,17 +36,15 @@ namespace BioHealthy
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-<<<<<<< HEAD
-
-            var connection = @"server=.\SQLSERVER2017;DataBase=BioHealthy;Trusted_Connection=True;ConnectRetryCount=0";
-            services.AddDbContext<AplicationsDbContext>(option => option.UseSqlServer(connection));
 
 
-
-=======
-            var connection = @"server=501-01;DataBase=BioHealtyPrueba; Trusted_Connection=True; ConnectRetryCount=0";
+            var connection = @"server=localhost;DataBase=BioHealthy;User ID=ACADEMICO/501; Password=cesde; Trusted_Connection=True; ConnectRetryCount=0";
             services.AddDbContext<MyDBContext>(options => options.UseSqlServer(connection));
->>>>>>> conexiondatabase
+            /**var connection = @"Data Source=000.000.0.0;server=NameServer;DataBase=BioHealthy;User ID=Login; Password=****; Trusted_Connection=True; ConnectRetryCount=0";
+            services.AddDbContext<MyDBContext>(options => options.UseSqlServer(connection));**/
+            /**var connection = @"server=NameServer;DataBase=BioHealthy; Trusted_Connection=True; ConnectRetryCount=0";
+            services.AddDbContext<MyDBContext>(options => options.UseSqlServer(connection));**/
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
