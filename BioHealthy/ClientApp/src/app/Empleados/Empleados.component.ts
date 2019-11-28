@@ -7,7 +7,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./empleados.component.css']
 })
 export class EmpleadosComponent {
-    lstEmpleados: Empleados[];
+    public lstEmpleados: Empleados[ ];
+
+    
 
   msg: string;
   documento: string;
@@ -17,11 +19,12 @@ export class EmpleadosComponent {
   ciudad:string;
 
   employees = [
-    { documento: '123', nombre: "sebastian", apellido: "castro", cargo: "desarrollo",ciudad:"medellin" },
+    {documento: '' , nombre: '' , apellido: '', cargo: '', ciudad: ''},
+
 
   ];
 
-
+    
 
   model: any = {};
   model2: any = {};

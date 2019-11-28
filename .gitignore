@@ -29,6 +29,16 @@ BioHealthy/Migrations/20191126214251_InitialCreate.Designer.cs
 BioHealthy/Migrations/20191127130225_InitialCreate.cs
 BioHealthy/Migrations/20191127130225_InitialCreate.Designer.cs
 BioHealthy/Startup.cs
+<<<<<<< HEAD
 =======
 .vs/BioHealthy/v16/Server/sqlite3/db.lock
 >>>>>>> conexiondatabase
+=======
+.vs/BioHealthy/v15/.suo
+.vs/BioHealthy/v15/Server/sqlite3/storage.ide
+.vs/BioHealthy/v15/Server/sqlite3/storage.ide-shm
+.vs/BioHealthy/v15/Server/sqlite3/storage.ide-wal
+.vs/BioHealthy/DesignTimeBuild/.dtbcache
+.vs/BioHealthy/v16/.suo
+.vs/BioHealthy/v16/Server/sqlite3/storage.ide
+>>>>>>> 9346fa315bacf3d17d70754a626f0f33bf11dc38
