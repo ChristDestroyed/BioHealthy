@@ -51,3 +51,12 @@ BioHealthy/BioHealthy.csproj
 BioHealthy/component/package-lock.json
 BioHealthy/BioHealthy.csproj
 BioHealthy/ClientApp/src/app/Registro/registro.component.html
+BioHealthy/Migrations/20191126214251_InitialCreate.cs
+BioHealthy/Migrations/20191126214251_InitialCreate.Designer.cs
+BioHealthy/Migrations/MyDBContextModelSnapshot.cs
+BioHealthy/Migrations/20191126214251_InitialCreate.cs
+BioHealthy/Migrations/20191126214251_InitialCreate.Designer.cs
+BioHealthy/Migrations/MyDBContextModelSnapshot.cs
+BioHealthy/Migrations/20191126214251_InitialCreate.cs
+BioHealthy/Migrations/20191126214251_InitialCreate.Designer.cs
+BioHealthy/Migrations/MyDBContextModelSnapshot.cs
