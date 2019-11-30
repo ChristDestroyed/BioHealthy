@@ -13,6 +13,7 @@ namespace BioHealthy.Models
 
         }
         public DbSet<Empleado> Empleados { get; set; }
+
     }
     public class Empleado
     {

@@ -7,12 +7,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BioHealthy.Controllers
 {
-    [Route("api/[controller]")]
-    public class EmpleadosController : Controller
+
+   [Route("api/[controller]")]
+   public class EmpleadosController : Controller
     {
+
         private Models.MyDBContext db;
 
         public EmpleadosController(Models.MyDBContext context)
+
+         
+
         {
             db = context;
         }
