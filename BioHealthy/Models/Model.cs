@@ -12,9 +12,9 @@ namespace BioHealthy.Models
         {
 
         }
-        public DbSet<Message> Message { get; set; }
+        public DbSet<Empleado> Empleados { get; set; }
     }
-    public class Message
+    public class Empleado
     {
         public int Id { get; set; }
         public int Documento { get; set; }

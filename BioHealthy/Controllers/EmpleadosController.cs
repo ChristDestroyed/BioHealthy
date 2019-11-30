@@ -10,12 +10,12 @@ namespace BioHealthy.Controllers
     [Route("api/[controller]")]
     public class EmpleadosController : Controller
     {
-        private Models.MyDBcontext db;
-        public EmpleadosController(Models.MyDBcontext context)
+        private Models.MyDBContext db;
+
+        public EmpleadosController(Models.MyDBContext context)
         {
             db = context;
         }
-
 
         [HttpGet("[action]")]
         public IEnumerable<ViewEmpleados>Empleados()
