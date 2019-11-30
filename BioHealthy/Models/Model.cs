@@ -12,11 +12,22 @@ namespace BioHealthy.Models
         {
 
         }
-        public DbSet<Empleado> Empleados { get; set; }
-
+        public DbSet<Empleados> Empleados { get; set; }
+        public DbSet<Visitantes> Visitante { get; set; }
     }
-    public class Empleado
+    public class Empleados
     {
+       
+ public int Id { get; set; }
+        public int Documento { get; set; }
+        public string Nombres { get; set; }
+        public string Apellidos { get; set; }
+        public string Cargo { get; set; }
+        public string Ciudad { get; set; }
+    }
+    public class Visitante
+    {
+
         public int Id { get; set; }
         public int Documento { get; set; }
         public string Nombres { get; set; }
@@ -24,4 +35,7 @@ namespace BioHealthy.Models
         public string Cargo { get; set; }
         public string Ciudad { get; set; }
     }
+
+
+
 }
