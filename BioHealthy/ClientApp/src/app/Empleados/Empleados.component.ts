@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./empleados.component.css']
 })
 export class EmpleadosComponent {
-   
+
 
     public lstEmpleados: any[]=[];
 
@@ -24,7 +24,7 @@ empleados = [
 
   ];
 
-    
+
 
   model: any = {};
   model2: any = {};
@@ -43,7 +43,7 @@ empleados = [
   }
 
   myValue;
-  editEmployee(i): void {
+  editEmpleados(i): void {
     this.hideUpdate = false;
     this.model2.documento = this.empleados[i].documento;
     this.model2.nombre = this.empleados[i].nombre;
@@ -53,7 +53,7 @@ empleados = [
     this.myValue = i;
   }
 
-  updateEmployee(): void {
+  updateEmpleados(): void {
     let i = this.myValue;
     for (let j = 0; j < this.empleados.length; j++) {
       if (j == i) {

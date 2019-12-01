@@ -12,8 +12,18 @@ namespace BioHealthy.Models.ViewModels
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Cargo { get; set; }
-
         public string Ciudad {get; set;}
 
     }
+public class ViewVisitantes
+    {
+        public int Id { get; set; }
+        public int Documento { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string Cargo { get; set; }
+        public string Ciudad {get; set;}
+
+    }
+
 }

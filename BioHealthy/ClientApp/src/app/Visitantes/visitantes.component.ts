@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./visitantes.component.css']
 })
 export class VisitantesComponent {
+  public lstVisitantes: any[]=[];
+
   msg: string;
   documento: string;
   nombre: string;
