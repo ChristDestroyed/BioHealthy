@@ -23,7 +23,7 @@ namespace BioHealthy.Controllers
         }
 
         [HttpGet("[action]")]
-        public IEnumerable<ViewEmpleados>Empleados()
+        public IEnumerable<ViewEmpleados>Visitantes()
         {
             List<ViewVisitantes> lst = (from d in db.Visitantes
                                        select new ViewVisitantes
