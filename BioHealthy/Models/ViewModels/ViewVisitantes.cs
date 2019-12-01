@@ -1,11 +1,13 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace BioHealthy.Models.ViewModels
 {
-    public class ViewEmpleados
+
+public class ViewVisitantes
     {
         public int Id { get; set; }
         public int Documento { get; set; }
@@ -15,5 +17,4 @@ namespace BioHealthy.Models.ViewModels
         public string Ciudad {get; set;}
 
     }
-
 }

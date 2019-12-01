@@ -13,7 +13,7 @@ namespace BioHealthy.Models
 
         }
         public DbSet<Empleados> Empleados { get; set; }
-        public DbSet<Visitantes> Visitante { get; set; }
+        public DbSet<Visitantes> Visitantes { get; set; }
     }
     public class Empleados
     {
