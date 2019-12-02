@@ -43,6 +43,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="ClientApp\Models\Cargo.cs" />
+    <Compile Remove="ClientApp\Models\Ciudad.cs" />
+    <Compile Remove="ClientApp\Models\Empleados.cs" />
+    <Compile Remove="ClientApp\Models\EmployeeDataAccessLayerClass.cs" />
+    <Compile Remove="ClientApp\Models\Huellas.cs" />
+    <Compile Remove="ClientApp\Models\MyDBContext.cs" />
+    <Compile Remove="ClientApp\Models\Visitantes.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\Services.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="DPFPCtlXTypeLibNET">
       <HintPath>..\..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPCtlXTypeLibNET.dll</HintPath>
     </Reference>
@@ -67,6 +81,10 @@
     <Reference Include="DPFPVerNET">
       <HintPath>..\..\..\..\..\..\..\Program Files\DigitalPersona\One Touch SDK\.NET\Bin\DPFPVerNET.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\Services.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

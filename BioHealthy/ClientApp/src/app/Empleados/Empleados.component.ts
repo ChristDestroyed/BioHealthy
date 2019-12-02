@@ -70,13 +70,13 @@ empleados = [
     this.msg = '';
   }
   constructor(http: HttpClient, @Inject("BASE_URL") baseUrl: string) {
-    http.get<Empleado[]>(baseUrl + "api/Empleados/Empleados").subscribe(result => {
+    http.get<Empleados[]>(baseUrl + "api/Empleados/Empleados").subscribe(result => {
       this.lstEmpleados = result;
     }, error => console.error(error))
 
   }
  }
-interface Empleado {
+interface Empleados {
   Id: number,
   Documento: number,
   Nombre: string,

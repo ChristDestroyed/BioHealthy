@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BioHealthy.Models
+namespace BioHealthy.ClientApp.Models
 {
-    public class Class
-    {
-    }
+  public class Hellas
+  {
+  }
 }

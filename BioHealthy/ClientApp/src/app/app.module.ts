@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { VisitantesComponent } from './Visitantes/visitantes.component';
 import { RegistroComponent } from './Registro/registro.component';
 import { LoginComponent } from './Login/Login.component';
+import { Services } from '../../Services';
 
 const appRoutes: Routes = [
   { path: '', component: AppComponent  },
@@ -47,7 +48,7 @@ const appRoutes: Routes = [
 
     ])
   ],
-  providers: [],
+  providers: [Services],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

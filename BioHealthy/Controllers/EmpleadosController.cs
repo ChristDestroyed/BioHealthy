@@ -1,45 +1,50 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BioHealthy.Models.ViewModels;
+using BioHealthy.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BioHealthy.Controllers
+namespace EFNgApp.Controllers
 {
 
-   [Route("api/[controller]")]
-   public class EmpleadosController : Controller
+    public class EmployeeController : Controller
     {
+        EmployeeDataAccessLayer objempleados = new EmployeeDataAccessLayer();
 
-        private Models.MyDBContext db;
-
-        public EmpleadosController(Models.MyDBContext context)
-
-         
-
+        [HttpGet]
+        [Route("api/Empleados/Index")]
+        public IEnumerable<Empleados> Index()
         {
-            db = context;
+            return objempleados.GetAllEmpleados();
         }
 
-        [HttpGet("[action]")]
-        public IEnumerable<ViewEmpleados>Empleados()
+        [HttpPost]
+        [Route("api/Empleados/Create")]
+        public int Create([FromBody] Empleados empleados)
         {
-            List<ViewEmpleados> lst = (from d in db.Empleados
-                                       select new ViewEmpleados
-                                       {
-                                           Id = d.Id,
-                                           Documento = d.Documento,
-                                           Nombre = d.Nombres,
-                                           Apellido = d.Apellidos,
-                                           Cargo = d.Cargo,
-                                           Ciudad =d.Ciudad,
-                                       }).ToList();
-
-
-            return lst;
-
+            return objempleados.AddEmpleados(empleados);
         }
-       
+
+        [HttpGet]
+        [Route("api/Empleados/Details/{id}")]
+        public Empleados Details(int id)
+        {
+            return objempleados.GetEmpleadosData(id);
+        }
+
+        [HttpPut]
+        [Route("api/Empleados/Edit")]
+        public int Edit([FromBody]Empleados empleados)
+        {
+            return objempleados.UpdateEmpleados(empleados);
+        }
+
+        [HttpDelete]
+        [Route("api/Empleados/Delete/{id}")]
+        public int Delete(int id)
+        {
+            return objempleados.DeleteEmpleados(id);
+        }
+
+        
     }
 }
+
