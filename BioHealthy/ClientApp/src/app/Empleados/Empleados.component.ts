@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./empleados.component.css']
 })
 export class EmpleadosComponent {
-    public lstEmpleados: Empleados[ ];
 
-    
+
+    public lstEmpleados: any[]=[];
 
   msg: string;
   documento: string;
@@ -18,46 +18,46 @@ export class EmpleadosComponent {
   cargo: string;
   ciudad:string;
 
-  employees = [
+empleados = [
     {documento: '' , nombre: '' , apellido: '', cargo: '', ciudad: ''},
 
 
   ];
 
-    
+
 
   model: any = {};
   model2: any = {};
   hideUpdate: boolean = true;
 
-  addEmployee(): void {
-    this.employees.push(this.model);
+  addEmpleados(): void {
+    this.empleados.push(this.model);
     this.model = {};
     this.msg='El Registro Fue Exitoso'
   }
-  deleteEmployee(i): void {
+  deleteEmpleados(i): void {
     var answer = confirm('Esta Seguro de Querer Eliminarlo')
     if (answer) {
-      this.employees.splice(i, 1);
+      this.empleados.splice(i, 1);
     }
   }
 
   myValue;
-  editEmployee(i): void {
+  editEmpleados(i): void {
     this.hideUpdate = false;
-    this.model2.documento = this.employees[i].documento;
-    this.model2.nombre = this.employees[i].nombre;
-    this.model2.apellido = this.employees[i].apellido;
-    this.model2.cargo = this.employees[i].cargo;
-    this.model2.ciudad=this.employees[i].ciudad;
+    this.model2.documento = this.empleados[i].documento;
+    this.model2.nombre = this.empleados[i].nombre;
+    this.model2.apellido = this.empleados[i].apellido;
+    this.model2.cargo = this.empleados[i].cargo;
+    this.model2.ciudad=this.empleados[i].ciudad;
     this.myValue = i;
   }
 
-  updateEmployee(): void {
+  updateEmpleados(): void {
     let i = this.myValue;
-    for (let j = 0; j < this.employees.length; j++) {
+    for (let j = 0; j < this.empleados.length; j++) {
       if (j == i) {
-        this.employees[i] = this.model2;
+        this.empleados[i] = this.model2;
         this.model2 = {};
         this.msg='El Registro se Actualizo Existosamente'
       }
@@ -70,13 +70,13 @@ export class EmpleadosComponent {
     this.msg = '';
   }
   constructor(http: HttpClient, @Inject("BASE_URL") baseUrl: string) {
-    http.get<Empleados[]>(baseUrl + "api/Empleados/Empleados").subscribe(result => {
+    http.get<Empleado[]>(baseUrl + "api/Empleados/Empleados").subscribe(result => {
       this.lstEmpleados = result;
     }, error => console.error(error))
 
   }
  }
-interface Empleados {
+interface Empleado {
   Id: number,
   Documento: number,
   Nombre: string,

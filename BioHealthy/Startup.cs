@@ -38,12 +38,12 @@ namespace BioHealthy
             });
 
 
-            var connection = @"server=localhost;DataBase=BioHealthy;User ID=ACADEMICO/501; Password=cesde; Trusted_Connection=True; ConnectRetryCount=0";
+            /**var connection = @"server=localhost;DataBase=BioHealthy;User ID=ACADEMICO/501; Password=cesde; Trusted_Connection=True; ConnectRetryCount=0";
             services.AddDbContext<MyDBContext>(options => options.UseSqlServer(connection));
             /**var connection = @"Data Source=000.000.0.0;server=NameServer;DataBase=BioHealthy;User ID=Login; Password=****; Trusted_Connection=True; ConnectRetryCount=0";
             services.AddDbContext<MyDBContext>(options => options.UseSqlServer(connection));**/
-            /**var connection = @"server=NameServer;DataBase=BioHealthy; Trusted_Connection=True; ConnectRetryCount=0";
-            services.AddDbContext<MyDBContext>(options => options.UseSqlServer(connection));**/
+            var connection = @"Server=(LocalDb)\\MSSQLLocalDB;Database=Biohealthy;Trusted_Connection=True;MultipleActiveResultSets=true";
+            services.AddDbContext<MyDBContext>(options => options.UseSqlServer(connection));
 
         }
 

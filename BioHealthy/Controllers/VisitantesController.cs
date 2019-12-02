@@ -9,12 +9,12 @@ namespace BioHealthy.Controllers
 {
 
    [Route("api/[controller]")]
-   public class EmpleadosController : Controller
+   public class VisitantesController : Controller
     {
 
         private Models.MyDBContext db;
 
-        public EmpleadosController(Models.MyDBContext context)
+        public VisitantesController(Models.MyDBContext context)
 
          
 
@@ -23,10 +23,10 @@ namespace BioHealthy.Controllers
         }
 
         [HttpGet("[action]")]
-        public IEnumerable<ViewEmpleados>Empleados()
+        public IEnumerable<ViewEmpleados>Visitantes()
         {
-            List<ViewEmpleados> lst = (from d in db.Empleados
-                                       select new ViewEmpleados
+            List<ViewVisitantes> lst = (from d in db.Visitantes
+                                       select new ViewVisitantes
                                        {
                                            Id = d.Id,
                                            Documento = d.Documento,
