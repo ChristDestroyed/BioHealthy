@@ -61,3 +61,5 @@ BioHealthy/Migrations/20191126214251_InitialCreate.cs
 BioHealthy/Migrations/20191126214251_InitialCreate.Designer.cs
 BioHealthy/Migrations/MyDBContextModelSnapshot.cs
 BioHealthy/appsettings.json
+BioHealthy/ClientApp/Services.ts
+BioHealthy/ClientApp/Services.ts

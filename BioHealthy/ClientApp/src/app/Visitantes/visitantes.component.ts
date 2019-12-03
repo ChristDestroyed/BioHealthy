@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./visitantes.component.css']
 })
 export class VisitantesComponent {
-  public lstVisitantes: any[]=[];
+  public lstVisitantes: any[] = [];
 
   msg: string;
   documento: string;
@@ -22,20 +22,22 @@ export class VisitantesComponent {
 
   model: any = {};
   model2: any = {};
-  hideUpdate: boolean = true;
+  hideUpdate = true;
 
   addVisitantes(): void {
     this.visitantes.push(this.model);
     this.model = {};
-    this.msg='El Registro Fue Exitoso'
+    this.msg = 'El Registro Fue Exitoso';
   }
   deleteVisitantes(i): void {
-    var answer = confirm('Esta Seguro de Querer Eliminarlo')
+    // tslint:disable-next-line: prefer-const
+    let answer = confirm('Esta Seguro de Querer Eliminarlo');
     if (answer) {
       this.visitantes.splice(i, 1);
     }
   }
 
+  // tslint:disable-next-line: member-ordering
   myValue;
   editVisitates(i): void {
     this.hideUpdate = false;
@@ -48,12 +50,13 @@ export class VisitantesComponent {
   }
 
   updateVisitantes(): void {
-    let i = this.myValue;
+    const i = this.myValue;
     for (let j = 0; j < this.visitantes.length; j++) {
+      // tslint:disable-next-line: triple-equals
       if (j == i) {
         this.visitantes[i] = this.model2;
         this.model2 = {};
-        this.msg = 'El Registro se Actualizo Existosamente'
+        this.msg = 'El Registro se Actualizo Existosamente';
       }
 
     }

@@ -73,10 +73,9 @@ empleados = [
     http.get<Empleados[]>(baseUrl + "api/Empleados/Empleados").subscribe(result => {
       this.lstEmpleados = result;
     }, error => console.error(error))
-
   }
- }
-interface Empleados {
+  }
+ interface Empleados {
   Id: number,
   Documento: number,
   Nombre: string,
