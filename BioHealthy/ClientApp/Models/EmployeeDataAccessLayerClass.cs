@@ -1,3 +1,5 @@
+using BioHealthy.Data;
+using BioHealthy.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,13 +10,13 @@ namespace EFNgApp.Models
 {
     public class EmployeeDataAccessLayer
     {
-        myDBContext db = new myDBContext();
+        MyDBcontext db = new MyDBcontext();
 
-        public IEnumerable<Empleados> GetAllEmployees()
+        public IEnumerable<Empleados> GetAllEmpleados()
         {
             try
             {
-                return db.TblEmployee.ToList();
+                return db.Empleados.ToList();
             }
             catch
             {
@@ -22,12 +24,12 @@ namespace EFNgApp.Models
             }
         }
 
-        //To Add new employee record   
-        public int AddEmployee(TblEmployee employee)
+        //To Add new employee record
+        public int AddEmployee(Empleados empleados)
         {
             try
             {
-                db.TblEmployee.Add(employee);
+                db.Empleados.Add(empleados);
                 db.SaveChanges();
                 return 1;
             }
@@ -37,12 +39,12 @@ namespace EFNgApp.Models
             }
         }
 
-        //To Update the records of a particluar employee  
-        public int UpdateEmployee(TblEmployee employee)
+        //To Update the records of a particluar employee
+        public int UpdateEmpleados(Empleados empleados)
         {
             try
             {
-                db.Entry(employee).State = EntityState.Modified;
+                db.Entry(empleados).State = EntityState.Modified;
                 db.SaveChanges();
 
                 return 1;
@@ -53,13 +55,13 @@ namespace EFNgApp.Models
             }
         }
 
-        //Get the details of a particular employee  
-        public TblEmployee GetEmployeeData(int id)
+        //Get the details of a particular employee
+        public Empleados GetEmpleadosData(int id)
         {
             try
             {
-                TblEmployee employee = db.TblEmployee.Find(id);
-                return employee;
+                Empleados empleados = db.Empleados.Find(id);
+                return empleados;
             }
             catch
             {
@@ -67,13 +69,13 @@ namespace EFNgApp.Models
             }
         }
 
-        //To Delete the record of a particular employee  
+        //To Delete the record of a particular employee
         public int DeleteEmployee(int id)
         {
             try
             {
-                TblEmployee emp = db.TblEmployee.Find(id);
-                db.TblEmployee.Remove(emp);
+                Empleados emp = db.Empleados.Find(id);
+                db.Empleados.Remove(emp);
                 db.SaveChanges();
                 return 1;
             }
@@ -83,13 +85,7 @@ namespace EFNgApp.Models
             }
         }
 
-        //To Get the list of Cities  
-        public List<TblCities> GetCities()
-        {
-            List<TblCities> lstCity = new List<TblCities>();
-            lstCity = (from CityList in db.TblCities select CityList).ToList();
+        //To Get the list of Cities
 
-            return lstCity;
-        }
     }
 }

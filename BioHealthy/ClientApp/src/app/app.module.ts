@@ -10,7 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { VisitantesComponent } from './Visitantes/visitantes.component';
 import { RegistroComponent } from './Registro/registro.component';
 import { LoginComponent } from './Login/Login.component';
-import { Services } from '../../Services';
+
 
 const appRoutes: Routes = [
   { path: '', component: AppComponent  },
@@ -33,6 +33,7 @@ const appRoutes: Routes = [
 
 
 
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -48,7 +49,7 @@ const appRoutes: Routes = [
 
     ])
   ],
-  providers: [Services],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

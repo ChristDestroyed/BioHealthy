@@ -7,9 +7,16 @@ import { Component } from '@angular/core';
 })
 export class  RegistroComponent {
 
-  id: number;
-  nombre: string;
-  docmento: any;
+
+  msg: string;
+  email: string;
+  password: any;
+
+  User = [
+    {email: '' , password: '' , password2: ''},
+
+
+  ];
 
 
 

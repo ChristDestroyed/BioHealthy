@@ -16,6 +16,8 @@ namespace BioHealthy.Data
         //crear nuestro dbset
         public DbSet<Empleados>ContactoItems { get; set; }
         public DbSet<Visitantes>VisitanteItems { get; set; }
+
+        public DbSet<User>UserItems { get; set; }
     }
     public class Empleados
     {
@@ -35,4 +37,14 @@ namespace BioHealthy.Data
         public string cargo { get; set; }
         public string ciudad{get; set;}
     }
+
+    public class User
+    {
+        public int id { get; set; }
+        public int email { get; set; }
+        public string password { get; set; }
+
+    }
+
+
 }
