@@ -1,12 +1,16 @@
 import { Component,Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
 @Component({
   selector: 'app-empleados',
   templateUrl: './empleados.component.html',
   styleUrls: ['./empleados.component.css']
 })
 export class EmpleadosComponent {
+
+  
+
 
 
     public lstEmpleados: any[]=[];

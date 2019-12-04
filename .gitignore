@@ -63,3 +63,4 @@ BioHealthy/Migrations/MyDBContextModelSnapshot.cs
 BioHealthy/appsettings.json
 BioHealthy/ClientApp/Services.ts
 BioHealthy/ClientApp/Services.ts
+BioHealthy/Controllers/EmpleadosController.cs

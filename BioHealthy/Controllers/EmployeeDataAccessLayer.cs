@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using BioHealthy.Data;
 
-namespace EFNgApp.Controllers
+namespace Biohealthy.Controllers
 {
     internal class EmployeeDataAccessLayer
     {

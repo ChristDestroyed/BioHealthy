@@ -70,7 +70,7 @@ namespace EFNgApp.Models
         }
 
         //To Delete the record of a particular employee
-        public int DeleteEmployee(int id)
+        public int DeleteEmpleados(int id)
         {
             try
             {

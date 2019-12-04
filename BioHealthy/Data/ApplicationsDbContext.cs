@@ -18,6 +18,7 @@ namespace BioHealthy.Data
         public DbSet<Visitantes>VisitanteItems { get; set; }
 
         public DbSet<User>UserItems { get; set; }
+        public IEnumerable<Empleados> Empleados { get; internal set; }
     }
     public class Empleados
     {
