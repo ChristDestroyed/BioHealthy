@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Net;
 using BioHealthy.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -8,16 +7,16 @@ using Microsoft.AspNetCore.Mvc;
 namespace Biohealthy.Controllers
 {
 
-    
-    
-        [Produces("application/json")]
+
+
+    [Produces("application/json")]
         [Route("api/Empleados")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public class EmpleadosController : Controller
         {
-            private readonly AplicationsDbContext _context;
+            private readonly ApplicationDbContext _context;
 
-            public EmpleadosController(AplicationsDbContext context)
+            public EmpleadosController(ApplicationDbContext context)
             {
                 _context = context;
             }

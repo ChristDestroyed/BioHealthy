@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BioHealthy.ClientApp.Models
+namespace BioHealthy.Models
 {
-  public class MyDBContext
-  {
-  }
+    public class ApplicationUser
+    {
+    }
 }
