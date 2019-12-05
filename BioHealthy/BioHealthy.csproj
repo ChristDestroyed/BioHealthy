@@ -43,18 +43,27 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="ClientApp\Models\Cargo.cs" />
-    <Compile Remove="ClientApp\Models\Ciudades.cs" />
-    <Compile Remove="ClientApp\Models\Empleados.cs" />
-    <Compile Remove="ClientApp\Models\EmployeeDataAccessLayerClass.cs" />
-    <Compile Remove="ClientApp\Models\Huellas.cs" />
-    <Compile Remove="ClientApp\Models\MyDBContext.cs" />
-    <Compile Remove="ClientApp\Models\UserInfo.cs" />
-    <Compile Remove="ClientApp\Models\Visitantes.cs" />
+    <Compile Remove="Models\Cargo.cs" />
+    <Compile Remove="Models\Ciudades.cs" />
+    <Compile Remove="Models\Empleados.cs" />
+    <Compile Remove="Models\EmployeeDataAccessLayerClass.cs" />
+    <Compile Remove="Models\Huellas.cs" />
+    <Compile Remove="Models\MyDBContext.cs" />
+    <Compile Remove="Models\Visitantes.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="ClientApp\Services.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Models\Cargo.cs" />
+    <None Include="Models\Ciudades.cs" />
+    <None Include="Models\Empleados.cs" />
+    <None Include="Models\EmployeeDataAccessLayerClass.cs" />
+    <None Include="Models\Huellas.cs" />
+    <None Include="Models\MyDBContext.cs" />
+    <None Include="Models\Visitantes.cs" />
   </ItemGroup>
 
   <ItemGroup>

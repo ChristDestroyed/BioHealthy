@@ -6,8 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-
-namespace BioHealthy.Data
+namespace reactiveFormWeb.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using BioHealthy.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using reactiveFormWeb.Models;
 
 namespace Biohealthy.Controllers
 {
@@ -10,24 +10,16 @@ namespace Biohealthy.Controllers
 
 
     [Produces("application/json")]
-        [Route("api/Empleados")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public class EmpleadosController : Controller
-        {
-            private readonly ApplicationDbContext _context;
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Route("api/Empleados")]
+    public class PersonasController : Controller
+    {
+        private readonly ApplicationDbContext _context;
 
-            public EmpleadosController(ApplicationDbContext context)
-            {
-                _context = context;
-            }
-
-        // GET: api/Empleados
-        [HttpGet]
-        public IEnumerable<Empleados> GetPersonas()
+        public PersonasController(ApplicationDbContext context)
         {
-            return _context.Empleados;
+            _context = context;
         }
 
-       
     }
 }
