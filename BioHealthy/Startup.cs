@@ -1,14 +1,15 @@
 
 using BioHealthy.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
-
+using Microsoft.IdentityModel.Tokens;
 
 namespace BioHealthy
 {
@@ -25,7 +26,7 @@ namespace BioHealthy
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -35,13 +36,21 @@ namespace BioHealthy
 
 
             var connection = @"server=localhost;DataBase=BioHealthy;User ID=ACADEMICO/501; Password=cesde; Trusted_Connection=True; ConnectRetryCount=0";
-            services.AddDbContext<AplicationsDbContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection));
             /**var connection = @"Data Source=000.000.0.0;server=NameServer;DataBase=BioHealthy;User ID=Login; Password=****; Trusted_Connection=True; ConnectRetryCount=0";
             services.AddDbContext<MyDBContext>(options => options.UseSqlServer(connection));**/
-           /** var connection = @"Server=(LocalDb)\\MSSQLLocalDB;Database=Biohealthy;Trusted_Connection=True;MultipleActiveResultSets=true";
-            services.AddDbContext<MyDBContext>(options => options.UseSqlServer(connection));**/
+            /** var connection = @"Server=(LocalDb)\\MSSQLLocalDB;Database=Biohealthy;Trusted_Connection=True;MultipleActiveResultSets=true";
+             services.AddDbContext<MyDBContext>(options => options.UseSqlServer(connection));**/
 
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+              .AddEntityFrameworkStores<ApplicationDbContext>()
+              .AddDefaultTokenProviders();
+
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer();
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -54,6 +63,8 @@ namespace BioHealthy
             {
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
+
+                app.UseAuthentication();
             }
 
             app.UseHttpsRedirection();

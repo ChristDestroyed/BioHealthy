@@ -9,12 +9,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EmpleadosComponent {
 
-  
-
-
-
-    public lstEmpleados: any[]=[];
-
   msg: string;
   documento: string;
   nombre: string;
@@ -73,6 +67,9 @@ empleados = [
   closeAlert() {
     this.msg = '';
   }
+
+  public lstEmpleados: any[] = [];
+
   constructor(http: HttpClient, @Inject("BASE_URL") baseUrl: string) {
     http.get<Empleados[]>(baseUrl + "api/Empleados/Empleados").subscribe(result => {
       this.lstEmpleados = result;

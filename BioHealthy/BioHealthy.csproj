@@ -44,11 +44,12 @@
 
   <ItemGroup>
     <Compile Remove="ClientApp\Models\Cargo.cs" />
-    <Compile Remove="ClientApp\Models\Ciudad.cs" />
+    <Compile Remove="ClientApp\Models\Ciudades.cs" />
     <Compile Remove="ClientApp\Models\Empleados.cs" />
     <Compile Remove="ClientApp\Models\EmployeeDataAccessLayerClass.cs" />
     <Compile Remove="ClientApp\Models\Huellas.cs" />
     <Compile Remove="ClientApp\Models\MyDBContext.cs" />
+    <Compile Remove="ClientApp\Models\UserInfo.cs" />
     <Compile Remove="ClientApp\Models\Visitantes.cs" />
   </ItemGroup>
 

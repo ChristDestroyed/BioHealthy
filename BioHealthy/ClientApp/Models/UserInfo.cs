@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BioHealthy.ClientApp.Models
 {
-  public class Ciudad
-  {
-  }
+    public class UserInfocs
+    {
+    }
 }

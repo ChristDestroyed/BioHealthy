@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 
 namespace BioHealthy.ClientApp.Models
 {
-  public class Cargo
+  public class Ciudad
   {
-        public int Id { get; set; }
-
-        public string Descripcion { get; set; }
-
+        public int  IdCiudad { get; set; }
+        public int  Ciudad { get; set; }
+        
     }
 }

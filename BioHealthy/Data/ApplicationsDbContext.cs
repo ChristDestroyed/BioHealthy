@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,16 +9,23 @@ using System.Threading.Tasks;
 
 namespace BioHealthy.Data
 {
-    public class AplicationsDbContext : DbContext 
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public AplicationsDbContext(DbContextOptions<AplicationsDbContext> options) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
         {
-        }
-        //crear nuestro dbset
-        public DbSet<Empleados>ContactoItems { get; set; }
-        public DbSet<Visitantes>VisitanteItems { get; set; }
 
-        public DbSet<User>UserItems { get; set; }
+        }
+
+        //crear nuestro dbset
+        public DbSet<Empleados>Empleado{ get; set; }
+        public DbSet<Visitantes>Visitante { get; set; }
+
+        public DbSet<User>Admin { get; set; }
+        public DbSet<Cargo>cargo { get; set; }
+        public DbSet<Ciudades> Ciudad { get; set; }
+
+        public DbSet<Huellas> Huellas { get; set; }
         public IEnumerable<Empleados> Empleados { get; internal set; }
     }
     public class Empleados
@@ -46,6 +54,23 @@ namespace BioHealthy.Data
         public string password { get; set; }
 
     }
+    public class Cargo
+    {
+        public int Id { get; set; }
 
+        public string Descripcion { get; set; }
 
+    }
+    public class Ciudades
+    {
+        public int Id { get; set; }
+        public int Ciudad { get; set; }
+
+    }
+    public class Huellas
+    {
+        public int Id{ get; set; }
+        public int Huella { get; set; }
+        public int NombreHuella { get; set; }
+    }
 }
