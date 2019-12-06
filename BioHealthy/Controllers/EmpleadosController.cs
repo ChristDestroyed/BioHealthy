@@ -12,7 +12,7 @@ namespace Biohealthy.Controllers
     [Produces("application/json")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/Empleados")]
-    public class PersonasController : Controller
+    public class EmpleadosController : Controller
     {
         private readonly ApplicationDbContext _context;
 
