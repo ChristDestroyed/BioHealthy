@@ -16,7 +16,7 @@ namespace Biohealthy.Controllers
     {
         private readonly ApplicationDbContext _context;
 
-        public PersonasController(ApplicationDbContext context)
+        public EmpleadosController(ApplicationDbContext context)
         {
             _context = context;
         }
