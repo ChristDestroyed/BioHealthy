@@ -1,17 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using reactiveFormWeb.Models;
+using Microsoft.EntityFrameworkCore;
+using BioHealthy.Models;
 
-namespace Biohealthy.Controllers
+namespace BioHealthy.Controllers
 {
-
-
-
     [Produces("application/json")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    [Route("api/Empleados")]
+    [Route("api/Personas")]
     public class EmpleadosController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -21,5 +23,19 @@ namespace Biohealthy.Controllers
             _context = context;
         }
 
+        // GET: api/Empleados
+        [HttpGet]
+        public IEnumerable<Empleados> GetEmpleados()
+        {
+            return _context.Empleados;
+        }
+
     }
+
 }
+
+
+
+
+
+

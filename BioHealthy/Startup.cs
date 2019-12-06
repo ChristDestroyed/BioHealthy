@@ -2,12 +2,14 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using reactiveFormWeb.Models;
+using Microsoft.IdentityModel.Tokens;
+using BioHealthy.Models;
+using System;
+using System.Text;
 
 namespace BioHealthy
 {
@@ -20,35 +22,40 @@ namespace BioHealthy
 
         public IConfiguration Configuration { get; }
 
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<ApplicationDbContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+              .AddEntityFrameworkStores<ApplicationDbContext>()
+              .AddDefaultTokenProviders();
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                 options.TokenValidationParameters = new TokenValidationParameters
+                 {
+                     ValidateIssuer = true,
+                     ValidateAudience = true,
+                     ValidateLifetime = true,
+                     ValidateIssuerSigningKey = true,
+                     ValidIssuer = "yourdomain.com",
+                     ValidAudience = "yourdomain.com",
+                     IssuerSigningKey = new SymmetricSecurityKey(
+                    Encoding.UTF8.GetBytes(Configuration["Llave_super_secreta"])),
+                     ClockSkew = TimeSpan.Zero
+                 });
+
+            services.AddMvc();
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-
-
-            var connection = @"server=localhost;DataBase=BioHealthy;User ID=ACADEMICO/501; Password=cesde; Trusted_Connection=True; ConnectRetryCount=0";
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection));
-            /**var connection = @"Data Source=000.000.0.0;server=NameServer;DataBase=BioHealthy;User ID=Login; Password=****; Trusted_Connection=True; ConnectRetryCount=0";
-            services.AddDbContext<MyDBContext>(options => options.UseSqlServer(connection));**/
-            /** var connection = @"Server=(LocalDb)\\MSSQLLocalDB;Database=Biohealthy;Trusted_Connection=True;MultipleActiveResultSets=true";
-             services.AddDbContext<MyDBContext>(options => options.UseSqlServer(connection));**/
-
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-              .AddEntityFrameworkStores<ApplicationDbContext>()
-              .AddDefaultTokenProviders();
-
-
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer();
         }
-
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -59,15 +66,13 @@ namespace BioHealthy
             }
             else
             {
-                app.UseExceptionHandler("/Error");
-                app.UseHsts();
-
-                app.UseAuthentication();
+                app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

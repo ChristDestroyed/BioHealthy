@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using reactiveFormWeb.Models;
+using BioHealthy.Models;
 
 namespace BioHealthy.Migrations
 {
