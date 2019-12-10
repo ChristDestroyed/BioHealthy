@@ -22,9 +22,9 @@ namespace BioHealthy.Controllers
 
         // GET: api/Empleados
         [HttpGet]
-        public IEnumerable<Visitantes> GetEmpleados()
+        public IEnumerable<Visitantes> GetVisitantes()
         {
-            return _context.Visitante;
+            return _context.empleados;
         }
 
     }

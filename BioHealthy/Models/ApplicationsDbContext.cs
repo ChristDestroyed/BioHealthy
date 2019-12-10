@@ -18,14 +18,14 @@ namespace BioHealthy.Models
 
         //crear nuestro dbset
         public DbSet<Empleados>Empleado{ get; set; }
-        public DbSet<Visitantes>Visitante { get; set; }
+        public DbSet<Visitantes>empleados { get; set; }
 
         public DbSet<User>Admin { get; set; }
         public DbSet<Cargo>cargo { get; set; }
         public DbSet<Ciudades> Ciudad { get; set; }
 
         public DbSet<Huellas> Huellas { get; set; }
-        public IEnumerable<Empleados> Visitante { get; internal set; }
+        public IEnumerable<Empleados> empleado { get; internal set; }
     }
     public class Empleados
     {

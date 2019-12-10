@@ -1,4 +1,4 @@
-import { Component,Inject } from '@angular/core';
+import { Component,Inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './empleados.component.html',
   styleUrls: ['./empleados.component.css']
 })
-export class EmpleadosComponent {
+export class EmpleadosComponent implements OnInit {
+   
 
   msg: string;
   documento: string;
@@ -67,20 +68,10 @@ empleados = [
   closeAlert() {
     this.msg = '';
   }
-
-  public lstEmpleados: any[] = [];
-
-  constructor(http: HttpClient, @Inject("BASE_URL") baseUrl: string) {
-    http.get<Empleados[]>(baseUrl + "api/Empleados/Empleados").subscribe(result => {
-      this.lstEmpleados = result;
-    }, error => console.error(error))
+    ngOnInit(): void {
+        throw new Error("Method not implemented.");
+    }
+  
   }
-  }
- interface Empleados {
-  Id: number,
-  Documento: number,
-  Nombre: string,
-  Apellido: string,
-  Cargo: string,
-}
+ 
 
