@@ -25,7 +25,7 @@ namespace BioHealthy.Models
         public DbSet<Ciudades> Ciudad { get; set; }
 
         public DbSet<Huellas> Huellas { get; set; }
-        public IEnumerable<Empleados> Empleados { get; internal set; }
+        public IEnumerable<Empleados> Visitante { get; internal set; }
     }
     public class Empleados
     {
