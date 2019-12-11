@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { VisitantesService } from './visitantes.service';
 
 @Component({
   selector: 'app-visitantes',
   templateUrl: './visitantes.component.html',
   styleUrls: ['./visitantes.component.css']
 })
-export class VisitantesComponent {
-  public lstVisitantes: any[] = [];
+export class VisitantesComponent implements OnInit {
+    
+    lstVisitantes: [] = [];
+
+    constructor(private visitantesService: VisitantesService) {}
 
   msg: string;
   documento: string;
@@ -66,7 +70,13 @@ export class VisitantesComponent {
   closeAlert() {
     this.msg = '';
   }
+    ngOnInit() {
+        this.visitantesService.getvisitantes()
+            .subscribe(_lstVisitantes => this.visitantes = this.lstVisitantes,
+                error => console.error(error))
 
+
+    }
    }
 
 

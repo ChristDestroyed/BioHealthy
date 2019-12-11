@@ -18,19 +18,19 @@ namespace BioHealthy.Models
 
         //crear nuestro dbset
         public DbSet<Empleados>Empleado{ get; set; }
-        public DbSet<Visitantes>empleados { get; set; }
+        public DbSet<Visitantes>Visitantes { get; set; }
 
         public DbSet<User>Admin { get; set; }
         public DbSet<Cargo>cargo { get; set; }
         public DbSet<Ciudades> Ciudad { get; set; }
 
         public DbSet<Huellas> Huellas { get; set; }
-        public IEnumerable<Empleados> empleado { get; internal set; }
+        public IEnumerable<Empleados> Empleados { get;  set; }
     }
     public class Empleados
     {
         public int id { get; set; }
-        public int documento { get; set; }
+        public string documento { get; set; }
         public string nombre { get; set; }
         public string apellidos { get; set; }
         public string cargo { get; set; }
@@ -39,7 +39,7 @@ namespace BioHealthy.Models
     public class Visitantes
     {
         public int id { get; set; }
-        public int documento { get; set; }
+        public string documento { get; set; }
         public string nombre { get; set; }
         public string apellidos { get; set; }
         public string cargo { get; set; }
@@ -63,13 +63,13 @@ namespace BioHealthy.Models
     public class Ciudades
     {
         public int Id { get; set; }
-        public int Ciudad { get; set; }
+        public string Ciudad { get; set; }
 
     }
     public class Huellas
     {
         public int Id{ get; set; }
         public int Huella { get; set; }
-        public int NombreHuella { get; set; }
+        public string NombreHuella { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace BioHealthy.Controllers
         [HttpGet]
         public IEnumerable<Visitantes> GetVisitantes()
         {
-            return _context.empleados;
+            return _context.Visitantes;
         }
 
     }

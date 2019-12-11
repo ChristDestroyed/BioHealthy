@@ -4,13 +4,13 @@ import { Observable } from 'rxjs/Observable';
 import { VisitantesComponent } from './visitantes.component';
 
 @Injectable()
-export class EmpleadosService {
+export class VisitantesService {
 
     private apiURL = this.baseUrl + "api/Visitantes";
 
 
     constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) { }
-    getempleados(): Observable<VisitantesComponent[]> {
+    getvisitantes(): Observable<VisitantesComponent[]> {
         return this.http.get<VisitantesComponent[]>(this.apiURL);
     }
 
